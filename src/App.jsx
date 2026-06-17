@@ -1,12 +1,7 @@
 import { useState, useEffect } from 'react'
-import {
-  getDepartments,
-  getPatients,
-  getDoctors,
-  getAppointments,
-  getMedicalRecords,
-} from './api/api'
+import {getDepartments, getPatients, getDoctors, getAppointments,getMedicalRecords,} from './api/api.js'
 import './App.css'
+import ReservationForm from './components/ReservationForm'
 
 function App() {
   const [departments, setDepartments] = useState([])
@@ -65,6 +60,7 @@ function App() {
           </li>
         ))}
       </ul>
+      <ReservationForm/>
     </div>
   )
 }

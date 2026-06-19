@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
-import {getDepartments, getPatients, getDoctors, getAppointments,getMedicalRecords,} from './api/api.js'
+import {getDepartments, getPatients, getDoctors, getAppointments,getMedicalRecords, 
+deleteAppointment } from './api/api.js'
 import './App.css'
 import ReservationForm from './components/ReservationForm'
 
@@ -9,6 +10,17 @@ function App() {
   const [doctors, setDoctors] = useState([])
   const [appointments, setAppointments] = useState([])
   const [medicalRecords, setMedicalRecords] = useState([])
+
+  const handleDelete = async (appointmentNo) => {
+  if (!window.confirm('이 예약을 취소하시겠습니까?')) return
+  try {
+    await deleteAppointment(appointmentNo)
+    getAppointments().then(setAppointments).catch(console.error)  // 목록 갱신
+  } catch (err) {
+    console.error('취소 실패:', err)
+    alert('취소에 실패했습니다.')
+  }
+}
 
   useEffect(() => {
     getDepartments().then(setDepartments).catch(console.error)
@@ -48,6 +60,7 @@ function App() {
         {appointments.map((a) => (
           <li key={a.appointmentNo}>
             예약 #{a.appointmentNo} — 환자 {a.patientNo} / 의사 {a.doctorNo} / {a.status}
+                <button onClick={() => handleDelete(a.appointmentNo)}>취소</button>
           </li>
         ))}
       </ul>

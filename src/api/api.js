@@ -38,3 +38,11 @@ export async function createAppointment(appointment) {
   })
   return res.json()
 }
+
+// 예약 취소 (DELETE)
+export async function deleteAppointment(appointmentNo) {
+  const res = await fetch(`${BASE_URL}/appointments/${appointmentNo}`, {
+    method: 'DELETE',
+  })
+  return res.json()
+}

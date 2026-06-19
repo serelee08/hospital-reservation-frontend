@@ -29,3 +29,12 @@ export async function getMedicalRecords() {
   const res = await fetch(`${BASE_URL}/medical-records`)
   return res.json()
 }
+
+export async function createAppointment(appointment) {
+  const res = await fetch(`${BASE_URL}/appointments`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(appointment),
+  })
+  return res.json()
+}

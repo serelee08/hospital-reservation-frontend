@@ -4,6 +4,7 @@ deleteAppointment, updateAppointmentStatus } from './api/api.js'
 import './App.css'
 import Layout from './components/layout/Layout.jsx'
 import ReservationForm from './components/reservation/ReservationForm.jsx'
+import './App.css'
 
 function App() {
   const [departments, setDepartments] = useState([])

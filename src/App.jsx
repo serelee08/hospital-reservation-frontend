@@ -2,8 +2,8 @@ import { useState, useEffect } from 'react'
 import { getDepartments,  getDoctors, getAppointments,
 deleteAppointment, updateAppointmentStatus } from './api/api.js'
 import './App.css'
-import Layout from './components/Layout'
-import ReservationForm from './components/ReservationForm'
+import Layout from './components/layout/Layout.jsx'
+import ReservationForm from './components/reservation/ReservationForm.jsx'
 
 function App() {
   const [departments, setDepartments] = useState([])

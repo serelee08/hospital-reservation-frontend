@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { getDepartments, getDoctors, createAppointment, } from '../api/api'
+import { getDepartments, getDoctors, createAppointment, } from '../../api/api'
 
 function ReservationForm({ onSuccess }) {
   // 입력값 상자들

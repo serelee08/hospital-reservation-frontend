@@ -46,3 +46,11 @@ export async function deleteAppointment(appointmentNo) {
   })
   return res.json()
 }
+
+// 예약 상태 변경 (PATCH)
+export async function updateAppointmentStatus(appointmentNo, status) {
+  const res = await fetch(`${BASE_URL}/appointments/${appointmentNo}/status?status=${status}`, {
+    method: 'PATCH',
+  })
+  return res.json()
+}

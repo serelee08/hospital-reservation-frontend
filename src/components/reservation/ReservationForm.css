@@ -4,12 +4,15 @@
   padding: 28px;
   box-shadow: 0 4px 16px rgba(20, 184, 166, 0.1);
   border: 1px solid #CCFBF1;
+  max-width: 480px;
+  margin: 0 auto;
 }
 
 .form-card h2 {
   font-size: 20px;
   color: #0F766E;
   margin-bottom: 20px;
+  text-align: center;
 }
 
 .form-row {
@@ -23,6 +26,7 @@
   font-weight: 600;
   color: #475569;
   font-size: 14px;
+  flex-shrink: 0;
 }
 
 .form-row input,

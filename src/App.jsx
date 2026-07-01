@@ -72,10 +72,11 @@ function App() {
         <ul className="list">
           {appointments.map((a) => (
             <li key={a.appointmentNo} className="list-item">
-              <span className="label">
-                예약 #{a.appointmentNo} · 환자 {a.patientNo} · 의사 {a.doctorNo}{' '}
-                <span className={`chip chip-${a.status}`}>{a.status}</span>
-              </span>
+          <span className="label">
+                예약 #{a.appointmentNo} · {a.patientName} · {a.doctorName}
+          <span className="dept-tag"> ({a.departmentName})</span>{' '}
+          <span className={`chip chip-${a.status}`}>{a.status}</span>
+          </span>
               <span className="btn-group">
                 <button className="btn btn-done" onClick={() => handleStatusChange(a.appointmentNo, '완료')}>완료</button>
                 <button className="btn btn-status" onClick={() => handleStatusChange(a.appointmentNo, '취소')}>상태취소</button>
